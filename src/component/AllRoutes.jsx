@@ -11,6 +11,8 @@ import Profile from "../pages/Profile"
 import Wishlist from "../pages/Wishlist"
 import Homeliv from "../pages/Homeliv"
 import Bag from "../pages/Bag"
+import SingleProductPage from '../pages/SingleProductPage'
+import Login from '../pages/Login'
 
 const AllRoutes = () => {
   return (
@@ -26,7 +28,9 @@ const AllRoutes = () => {
             <Route path="/search" element={<Search/>}></Route>
             <Route path="/profile" element={<Profile/>}></Route>
             <Route path="/wishlist" element={<Wishlist/>}></Route>
-            <Route path="bag" element={<Bag/>}></Route>
+            <Route path="/bag" element={<Bag/>}></Route>
+            <Route path="/login" element={<Login/>}></Route>
+            <Route path="/men/:id" element={<SingleProductPage/>}></Route>
         </Routes>
     </div>
   )

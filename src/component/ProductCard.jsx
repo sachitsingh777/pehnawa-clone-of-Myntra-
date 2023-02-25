@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import {Link} from "react-router-dom"
 import {Text,Divider,ButtonGroup,Button,Image, Card, CardHeader, CardBody, CardFooter,Heading,Stack} from '@chakra-ui/react'
-const ProductCard = ({images,title,description,price,}) => {
+import { AuthContext } from '../Context/AuthContext'
+const ProductCard = ({el}) => {
+  const {images,title,description,price,id}=el
+  const {handleClick,cart}=useContext(AuthContext)
   return (
     <Card maxW='sm'>
+      <Link to={`./${id}`}>
   <CardBody >
     <Image
       src={images.image1}
@@ -20,14 +25,14 @@ const ProductCard = ({images,title,description,price,}) => {
         ₹{price}
       </Text>
     </Stack>
-  </CardBody>
+  </CardBody></Link>
   <Divider />
   <CardFooter>
     <ButtonGroup spacing='2'>
       <Button variant='solid' colorScheme='blue'>
         Buy now
       </Button>
-      <Button variant='ghost' colorScheme='blue'>
+      <Button variant='ghost' colorScheme='blue' onClick={()=>handleClick(el)}>
         Add to cart
       </Button>
     </ButtonGroup>
