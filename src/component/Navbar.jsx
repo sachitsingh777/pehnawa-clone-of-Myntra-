@@ -7,7 +7,6 @@ import {
     Stack,
     Collapse,
     Icon,
-    Link,
     Popover,
     PopoverTrigger,
     PopoverContent,
@@ -21,8 +20,11 @@ import {
     ChevronDownIcon,
     ChevronRightIcon,
   } from '@chakra-ui/icons';
-  
+import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../Context/AuthContext';
   export default function WithSubnavigation() {
+    const {cart}=useContext(AuthContext)
     const { isOpen, onToggle } = useDisclosure();
   
     return (
@@ -51,31 +53,30 @@ import {
             />
           </Flex>
           <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-            <Text
+           <Link to="/"><Text
               textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
               fontFamily={'heading'}
               color={useColorModeValue('gray.800', 'white')}>
               <Image src="./P.png" w="100%" h="40px"/>
-            </Text>
+            </Text></Link> 
   
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
               <DesktopNav />
             </Flex>
           </Flex>
-  
-          <Stack
+          <Link to="/bag">
+          <div className='cart'>
+   <span className='material-symbols-outlined'  >
+            <i className="fas fa-cart-plus"></i>
+</span><span>{cart.length}</span></div></Link>
+          <Stack 
             flex={{ base: 1, md: 0 }}
             justify={'flex-end'}
             direction={'row'}
             spacing={6}>
-            <Button
-              as={'a'}
-              fontSize={'sm'}
-              fontWeight={400}
-              variant={'link'}
-              href={'#'}>
-              Sign In
-            </Button>
+           
+
+         <Link to="/login">
             <Button
               as={'a'}
               display={{ base: 'none', md: 'inline-flex' }}
@@ -83,15 +84,15 @@ import {
               fontWeight={600}
               color={'white'}
               bg={'pink.400'}
-              href={'#'}
+              to={'#'}
               _hover={{
-                bg: 'pink.300',
+                bg: 'pink.900',
               }}>
-              Sign Up
-            </Button>
+              Login/Sign Up
+            </Button></Link>
           </Stack>
         </Flex>
-  
+         
         <Collapse in={isOpen} animateOpacity>
           <MobileNav />
         </Collapse>
@@ -112,7 +113,7 @@ import {
               <PopoverTrigger>
                 <Link
                   p={2}
-                  href={navItem.href ?? '#'}
+                  to={navItem.to ?? '#'}
                   fontSize={'sm'}
                   fontWeight={500}
                   color={linkColor}
@@ -146,15 +147,15 @@ import {
     );
   };
   
-  const DesktopSubNav = ({ label, href, subLabel }) => {
+  const DesktopSubNav = ({ label, to, subLabel }) => {
     return (
       <Link
-        href={href}
+        to={to}
         role={'group'}
         display={'block'}
         p={2}
         rounded={'md'}
-        _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}>
+        _hover={{ bg: useColorModeValue('pink.500', 'gray.900') }}>
         <Stack direction={'row'} align={'center'}>
           <Box>
             <Text
@@ -193,7 +194,7 @@ import {
     );
   };
   
-  const MobileNavItem = ({ label, children, href }) => {
+  const MobileNavItem = ({ label, children, to }) => {
     const { isOpen, onToggle } = useDisclosure();
   
     return (
@@ -201,7 +202,7 @@ import {
         <Flex
           py={2}
           as={Link}
-          href={href ?? '#'}
+          to={to ?? '#'}
           justify={'space-between'}
           align={'center'}
           _hover={{
@@ -233,7 +234,7 @@ import {
             align={'start'}>
             {children &&
               children.map((child) => (
-                <Link key={child.label} py={2} href={child.href}>
+                <Link key={child.label} py={2} to={child.to}>
                   {child.label}
                 </Link>
               ))}
@@ -246,236 +247,237 @@ import {
   
   const NAV_ITEMS = [
     {
-      label: 'MEN',href: "/men",
+      label: 'MEN',to: "/men",
       children: [
         {
           label: 'T-Shirts',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Casual Shirts',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Formal Shirts',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Sweatshirts',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Sweaters',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Jackets',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Blazers & Coats',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Suits',
-          href: '#Rain Jackets'
+          to: '#Rain Jackets'
       },
       ],
     },
     {
-      label: 'WOMEN',href: "/women",
+      label: 'WOMEN',to: "/women",
       children: [
         {
           label: 'Kurtas & Suits',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Kurtis, Tunics & Tops',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Ethnic Wear',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Leggings, Salwars & Churidars',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Skirts & Palazzos',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Sarees',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Dress Materials',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Lehenga Cholis',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Dupattas & Shawls',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Jackets',
-          href: '#'
+          to: '#'
       }
       ],
     },
     {
-      label: 'KIDS',href: "/kids",
+      label: 'KIDS',to: "/kids",
       children: [
         {
           label: 'T-Shirts',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Shirts',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Shorts',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Jeans',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Trousers',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Clothing Sets',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Ethnic Wear',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Track Pants & Pyjamas',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Jacket, Sweater & Sweatshirts',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Party Wear',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Innerwear & Thermals',
-          href: '#'
+          to: '#'
       },
   
       {
           label: 'Nightwear & Loungewear',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Value Packs',
-          href: '#'
+          to: '#'
       },
       
       ],
     },{
-      label: 'HOME & LIVING',href: "/homeliv",
+      label: 'HOME & LIVING',to: "/homeliv",
       children: [
         {
           label: 'Bedsheets',
-          href: '#'
+          to: '#'
       },
   
       {
           label: 'Bedding Sets',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Blankets, Quilts & Dohars',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Pillows & Pillow Covers',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Bed Covers',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Diwan Sets',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Chair Pads & Covers',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Sofa Covers',
-          href: '#'
+          to: '#'
       },
       
       ],
     },
     {
-      label: 'BEAUTY',href: "/beauty",
+      label: 'BEAUTY',to: "/beauty",
       children: [
         {
           label: 'Lipstick',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Lip Gloss',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Lip Liner',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Mascara',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Eyeliner',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Kajal',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Eyeshadow',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Foundation',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Primer',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Concealer',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Compact',
-          href: '#'
+          to: '#'
       },
       {
           label: 'Nail Polish',
-          href: '#'
+          to: '#'
       },
       
       ],
     },
+   
   ];

@@ -13,6 +13,7 @@ import Homeliv from "../pages/Homeliv"
 import Bag from "../pages/Bag"
 import SingleProductPage from '../pages/SingleProductPage'
 import Login from '../pages/Login'
+import Address from '../pages/Address'
 
 const AllRoutes = () => {
   return (
@@ -30,6 +31,7 @@ const AllRoutes = () => {
             <Route path="/wishlist" element={<Wishlist/>}></Route>
             <Route path="/bag" element={<Bag/>}></Route>
             <Route path="/login" element={<Login/>}></Route>
+            <Route path="/address" element={<Address/>}></Route>
             <Route path="/men/:id" element={<SingleProductPage/>}></Route>
         </Routes>
     </div>
