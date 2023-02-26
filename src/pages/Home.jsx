@@ -1,9 +1,13 @@
 import React,{useEffect,useState} from 'react'
 import axios from 'axios'
-import { Carousel } from 'react-responsive-carousel';
+
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "../App.css"
-import { Grid,Heading,Image} from '@chakra-ui/react'
+import { Grid,Heading,Image,HStack} from '@chakra-ui/react'
+import Carousel from "../component/Carousel"
+
+
+
 
 
 
@@ -75,45 +79,44 @@ export default function Home() {
     return (
         <div>
           
-            <Carousel >
-                <img src="https://assets.indiadesire.com/images/myntra%20big%20fashion%20festival%202022.jpg" alt="d" />
-            <img src="https://assets.indiadesire.com/images/myntra%20big%20fashion%20festival%202022.jpg" alt="" />
-            <img src="https://assets.indiadesire.com/images/myntra%20big%20fashion%20festival%202022.jpg" alt="" />
-            </Carousel>
-           <Heading my={10}>DEAL OF THE DAY</Heading>
-            <Grid templateColumns='repeat(8, 1fr)'>
+          <Carousel/>
+            
+            <HStack><Heading my={10}>DEAL OF THE DAY</Heading></HStack>
+            <Grid templateColumns='repeat(5, 1fr)' gap={3}>
               
-              {dod.map((item)=><Image key={item.id} src={item.url} />)}
+              {dod.map((item)=><Image w="105%" h="290px" key={item.id} src={item.url} />)}
             </Grid>
-            <Heading my={10}>BEST OF MYNTRA EXCLUSIVE BRAND</Heading>
+
+            <HStack><Heading my={10}>BEST OF MYNTRA EXCLUSIVE BRAND</Heading></HStack>
             <Grid templateColumns='repeat(8, 1fr)'>
               {bom.map((item)=><Image key={item.id} src={item.url} />)}
             </Grid>
-            <Heading my={10}>TOP PICKS</Heading>
+            <HStack>
+            <Heading my={10}>TOP PICKS</Heading></HStack>
             <Grid templateColumns='repeat(7, 1fr)'>
               {top.map((item)=><Image key={item.id} src={item.url} />)}
             </Grid>
-            <Heading my={10}>CATEGORIES TO BAG</Heading>
+            <HStack><Heading my={10}>CATEGORIES TO BAG</Heading></HStack>
             <Grid templateColumns='repeat(8, 1fr)'>
               {ctg.map((item)=><Image key={item.id} src={item.url} />)}
             </Grid>
-            <Heading my={10}>DEALS ON TOP BRANDS</Heading>
+            <HStack><Heading my={10}>DEALS ON TOP BRANDS</Heading></HStack>
             <Grid templateColumns='repeat(4, 1fr)'>
               {dsla.map((item)=><Image key={item.id} src={item.url} />)}
             </Grid>
-            <Heading my={10}>BRANDS AT SLASHED PRICES</Heading>
+            <HStack><Heading my={10}>BRANDS AT SLASHED PRICES</Heading></HStack>
             <Grid templateColumns='repeat(4, 1fr)'>
               {dsla.map((item)=><Image key={item.id} src={item.url} />)}
             </Grid>
-            <Heading my={10}>GIFTING CARDS</Heading>
+            <HStack><Heading my={10}>GIFTING CARDS</Heading></HStack>
             <Grid templateColumns='repeat(5, 1fr)'>
               {gift.map((item)=><Image key={item.id} src={item.url} />)}
             </Grid>
-            <Heading my={10}>NEW IN TOP BRANDS</Heading>
+            <HStack><Heading my={10}>NEW IN TOP BRANDS</Heading></HStack>
          <Grid templateColumns='repeat(8, 1fr)'>
               {ntb.map((item)=><Image key={item.id} src={item.url} />)}
             </Grid>
-            <Heading my={10}>TOP INFLUENCERS EXCLUSIVE STYLES</Heading>
+            <HStack><Heading my={10}>TOP INFLUENCERS EXCLUSIVE STYLES</Heading></HStack>
             <Grid templateColumns='repeat(6, 1fr)'>
               {ties.map((item)=><Image key={item.id} src={item.url} />)}
             </Grid>

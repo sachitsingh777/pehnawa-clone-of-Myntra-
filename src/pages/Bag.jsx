@@ -1,30 +1,29 @@
 import React, { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../Context/AuthContext";
 import "./Bag.css";
-
+import { useNavigate ,Link} from "react-router-dom";
 const  Bag= () => {
-  const { cart, setCart, handleChange }=useContext(AuthContext)
+  const { cart, setCart }=useContext(AuthContext)
   const [price, setPrice] = useState(0);
-   
+   const navigate=useNavigate()
   
 
   const handleQty=(val,id)=>{
    const updatedata= cart.map((item)=>item.id==id?{...item,quantity:item.quantity+val}:item)
-
+     
    setCart(updatedata)
   }
+
+  console.log(cart)
   function total(){ 
     let sum=0;
-    console.log(cart.price)
+
     for(let x=0;x<cart.length;x++){
      
      sum+= (cart[x].price*cart[x].quantity); 
     
     }
       return sum;
-    
-    
-  
   }
 
 
@@ -67,8 +66,8 @@ const  Bag= () => {
         <span>Total Price of your Cart</span>
         <span>₹{total()}</span>
       </div>
-      <button style={{border:"1px solid blue"}}>Proceed</button>
-  
+    <Link to="/address">   <button style={{border:"1px solid blue"}} >CheckOut</button></Link>
+    
     </article>
   );
 };

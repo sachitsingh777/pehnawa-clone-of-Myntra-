@@ -2,6 +2,20 @@
   text-align: center;
 }
 
+
+.gradient  span{
+
+  font-size: 18px;
+ 
+
+font-weight: 600;
+
+} 
+
+.gradient {
+background: -webkit-linear-gradient(45deg, #ee7752, #e73c7e, #23a6d5 80%);
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -47,4 +61,33 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+
+
+.cart span:nth-child(2) {
+  padding: 0 3px;
+  background-color: #e73c7e;
+  color: white;
+  font-weight: bolx;
+  border-radius: 5px;
+  position: relative;
+  top: -20px;
+  right:8px
+}
+
+.cart  span:nth-child(1) {
+  font-size: 2rem;
+  color:#e73c7e;
+}
+.login-form{
+  margin:100px;
+  box-shadow: #e73c7e;
+}
+
+.otp{
+  color:#e73c7e;
+  font-size:16px;
+
 }

@@ -12,14 +12,6 @@ const AuthContextProvider = ({children}) => {
       console.log(cart)
     };
   
-    const handleChange = (item, d) => {
-      const ind = cart.indexOf(item);
-      const arr = cart;
-      arr[ind].amount += d;
-  
-      if (arr[ind].amount === 0) arr[ind].amount = 1;
-      setCart([...arr]);
-    };
   return (
     <AuthContext.Provider value={{handleClick,cart,setCart}}>
       {children}
@@ -27,4 +19,4 @@ const AuthContextProvider = ({children}) => {
   )
 }
 
-export default AuthContextProvider
+export default AuthContextProvider;
