@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../Context/AuthContext";
 import "./Bag.css";
 import { useNavigate ,Link} from "react-router-dom";
+import {Button} from "@chakra-ui/react"
 const  Bag= () => {
   const { cart, setCart }=useContext(AuthContext)
   const [price, setPrice] = useState(0);
@@ -66,7 +67,10 @@ const  Bag= () => {
         <span>Total Price of your Cart</span>
         <span>₹{total()}</span>
       </div>
-    <Link to="/address">   <button style={{border:"1px solid blue"}} >CheckOut</button></Link>
+    <Link to="/address">   <Button  borderRadius={5}
+                        variant="solid"
+                        colorScheme="pink"
+                        width="80px" >CheckOut</Button></Link>
     
     </article>
   );
