@@ -50,7 +50,7 @@ const Men = () => {
   const [orderby,setorderby]=useState("")
   const [filterby,setfilterby]=useState("")
   const [colorby,setcolorby]=useState("")
-  let sort="cost"
+  let sort="price"
   const getmen=()=>{
      let apiurl;
     if(orderby){

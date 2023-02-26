@@ -75,7 +75,7 @@ signInWithPhoneNumber(auth, phoneNumber, appVerifier)
       const user = result.user;
       console.log(JSON.stringify(user))
       alert("User is verified")
-      location.href="/"
+      window.location.href="/"
       // ...
     }).catch((error) => {
       // User couldn't sign in (bad verification code?)
