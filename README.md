@@ -21,10 +21,16 @@ its is a one stop shop for all your fashion and life styless need. And its aim a
 
 ## Landing page
 ![homePage](/images/home.png)
+## DropDownMenu
 ![DropDownMenu](/images/Dropdownmenu.png)
+## ProductSection
 ![ProductSection](/images/productsection.png)
+## SingleProductPage
 ![SingleProductPage](/images/singlepage.png)
+## Cart
 ![cart](/images/cart.png)
+## Checkout
 ![checkout](/images/checkout.png)
 ![checkout](/images/checkout-2.png)
+## Signup/Login
 ![Signup/Login](/images/signin.png)
