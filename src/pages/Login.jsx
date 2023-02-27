@@ -86,8 +86,8 @@ signInWithPhoneNumber(auth, phoneNumber, appVerifier)
   render() {
     return (
       <div className="login-form">
-        <Avatar bg="pink.500"  />
-   <Heading color="pink.400" m={6}>Welcome</Heading>
+        <Avatar bg="blue.500"  />
+   <Heading color="blue.400" m={6}>Welcome</Heading>
         <form onSubmit={this.onSignInSubmit}>
           <div id="sign-in-button"></div>
           <h2 className="otp">Enter Mobile Number</h2>
@@ -95,7 +95,7 @@ signInWithPhoneNumber(auth, phoneNumber, appVerifier)
           <Button type="submit"
            borderRadius={0}
                         variant="solid"
-                        colorScheme="pink"
+                        colorScheme="blue"
                         width="60px"
           >Verify</Button>
         </form>
@@ -106,7 +106,7 @@ signInWithPhoneNumber(auth, phoneNumber, appVerifier)
           <Button type="submit"
           borderRadius={0}
           variant="solid"
-          colorScheme="pink"
+          colorScheme="blue"
           width="60px"
           >Submit</Button>
         </form>

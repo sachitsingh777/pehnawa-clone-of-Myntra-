@@ -3,7 +3,7 @@ import axios from 'axios'
 
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "../App.css"
-import { Grid,Heading,Image,HStack} from '@chakra-ui/react'
+import { SimpleGrid,Heading,Image,HStack} from '@chakra-ui/react'
 import Carousel from "../component/Carousel"
 
 
@@ -80,46 +80,46 @@ export default function Home() {
         <div>
           
           <Carousel/>
-            
+       
             <HStack><Heading my={10}>DEAL OF THE DAY</Heading></HStack>
-            <Grid templateColumns='repeat(5, 1fr)' gap={3}>
+            <SimpleGrid  gap={3} columns={{sm:2,md:3,lg:5,base:1}} >
               
               {dod.map((item)=><Image w="105%" h="290px" key={item.id} src={item.url} />)}
-            </Grid>
+            </SimpleGrid>
 
             <HStack><Heading my={10}>BEST OF MYNTRA EXCLUSIVE BRAND</Heading></HStack>
-            <Grid templateColumns='repeat(8, 1fr)'>
+            <SimpleGrid  columns={{sm:2,md:4,lg:8,base:1}} >
               {bom.map((item)=><Image key={item.id} src={item.url} />)}
-            </Grid>
+            </SimpleGrid>
             <HStack>
             <Heading my={10}>TOP PICKS</Heading></HStack>
-            <Grid templateColumns='repeat(7, 1fr)'>
+            <SimpleGrid  columns={{sm:2,md:3,lg:7,base:1}}>
               {top.map((item)=><Image key={item.id} src={item.url} />)}
-            </Grid>
+            </SimpleGrid>
             <HStack><Heading my={10}>CATEGORIES TO BAG</Heading></HStack>
-            <Grid templateColumns='repeat(8, 1fr)'>
+            <SimpleGrid templateColumns='repeat(8, 1fr)' columns={{sm:2,md:4,lg:8,base:1}}>
               {ctg.map((item)=><Image key={item.id} src={item.url} />)}
-            </Grid>
+            </SimpleGrid>
             <HStack><Heading my={10}>DEALS ON TOP BRANDS</Heading></HStack>
-            <Grid templateColumns='repeat(4, 1fr)'>
+            <SimpleGrid  columns={{sm:2,md:2,lg:4,base:1}}>
               {dsla.map((item)=><Image key={item.id} src={item.url} />)}
-            </Grid>
+            </SimpleGrid>
             <HStack><Heading my={10}>BRANDS AT SLASHED PRICES</Heading></HStack>
-            <Grid templateColumns='repeat(4, 1fr)'>
+            <SimpleGrid  columns={{sm:2,md:2,lg:4,base:1}}>
               {dsla.map((item)=><Image key={item.id} src={item.url} />)}
-            </Grid>
+            </SimpleGrid>
             <HStack><Heading my={10}>GIFTING CARDS</Heading></HStack>
-            <Grid templateColumns='repeat(5, 1fr)'>
+            <SimpleGrid  columns={{sm:2,md:2,lg:5,base:1}}>
               {gift.map((item)=><Image key={item.id} src={item.url} />)}
-            </Grid>
+            </SimpleGrid>
             <HStack><Heading my={10}>NEW IN TOP BRANDS</Heading></HStack>
-         <Grid templateColumns='repeat(8, 1fr)'>
+         <SimpleGrid  columns={{sm:2,md:4,lg:8,base:1}}>
               {ntb.map((item)=><Image key={item.id} src={item.url} />)}
-            </Grid>
+            </SimpleGrid>
             <HStack><Heading my={10}>TOP INFLUENCERS EXCLUSIVE STYLES</Heading></HStack>
-            <Grid templateColumns='repeat(6, 1fr)'>
+            <SimpleGrid  columns={{sm:2,md:3,lg:6,base:1}}>
               {ties.map((item)=><Image key={item.id} src={item.url} />)}
-            </Grid>
+            </SimpleGrid>
            
 
 

@@ -65,13 +65,13 @@
   
   .total span:nth-child(1) {
     font-size: 2rem;
-    color: pink;
+    color: rgb(17, 17, 212);
     font-weight: bold;
     letter-spacing: 2px;
   }
   
   .total span:nth-child(2) {
     font-size: 2rem;
-    color: rgb(204, 12, 178);
+    color: rgb(17, 63, 216);
     font-weight: bold;
   }
