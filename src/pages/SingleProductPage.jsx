@@ -5,12 +5,19 @@ import {
     BreadcrumbLink,
     BreadcrumbSeparator,
   } from '@chakra-ui/react'
-import React ,{useEffect,useState}from 'react'
+import React ,{useEffect,useState,useContext}from 'react'
 import { useParams } from 'react-router-dom'
+import {Link} from "react-router-dom"
 import axios from "axios"
+import { AuthContext } from '../Context/AuthContext'
 const SingleProductPage = () => {
  const {id}=useParams()
     const [men,setMen]=useState({})
+    const {handleClick}=useContext(AuthContext)
+    const [change,setChange]=useState(false)
+    const handleChange=(id)=>{
+      setChange(true)
+    }
     const fetchMEN=()=>{
       return axios.get(`http://localhost:8080/men/${id}`).then((res)=>setMen(res.data))
     }
@@ -35,12 +42,12 @@ const SingleProductPage = () => {
          
         </Flex>
         
-         <Box w="50%">
+         <Box w="50%" mx={10}>
             
             <Stack>
               <Heading>{title}</Heading>
-            <Heading>{description}</Heading>  
-            <Button>
+            <Heading size={"md"} color="gray.500">{description}</Heading>  
+            <Button w="100px">
                 
                 <Breadcrumb separator='|'>
   <BreadcrumbItem>
@@ -69,9 +76,25 @@ const SingleProductPage = () => {
   ))}
   
 </HStack>
-              
 
-            </Stack>
+
+            </Stack><Button variant='ghost' colorScheme='blue'
+w="150px"
+       as={'a'}
+       display={{ base: 'none', md: 'inline-flex' }}
+       fontSize={'sm'}
+       fontWeight={600}
+       color={'white'}
+       bg={'blue.400'}
+       to={'#'}
+       _hover={{
+         bg: 'blue.900',
+       }}
+      onClick={()=>{
+        handleChange(id)
+        handleClick(men)}}>
+        {change?"Already Add to cart":"Add to cart"}
+      </Button> 
 
         </Box>
     </Flex>

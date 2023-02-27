@@ -20,6 +20,7 @@ import {
     ChevronDownIcon,
     ChevronRightIcon,
   } from '@chakra-ui/icons';
+  import '../App.css';
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../Context/AuthContext';
@@ -28,7 +29,7 @@ import { AuthContext } from '../Context/AuthContext';
     const { isOpen, onToggle } = useDisclosure();
   
     return (
-      <Box>
+      <Box className='navbar'>
         <Flex
           bg={useColorModeValue('white', 'gray.800')}
           color={useColorModeValue('gray.600', 'white')}
@@ -83,10 +84,10 @@ import { AuthContext } from '../Context/AuthContext';
               fontSize={'sm'}
               fontWeight={600}
               color={'white'}
-              bg={'pink.400'}
+              bg={'blue.400'}
               to={'#'}
               _hover={{
-                bg: 'pink.900',
+                bg: 'blue.900',
               }}>
               Login/Sign Up
             </Button></Link>
@@ -155,12 +156,12 @@ import { AuthContext } from '../Context/AuthContext';
         display={'block'}
         p={2}
         rounded={'md'}
-        _hover={{ bg: useColorModeValue('pink.500', 'gray.900') }}>
+        _hover={{ bg: useColorModeValue('blue.500', 'gray.900') }}>
         <Stack direction={'row'} align={'center'}>
           <Box>
             <Text
               transition={'all .3s ease'}
-              _groupHover={{ color: 'pink.400' }}
+              _groupHover={{ color: 'blue.400' }}
               fontWeight={500}>
               {label}
             </Text>
@@ -174,7 +175,7 @@ import { AuthContext } from '../Context/AuthContext';
             justify={'flex-end'}
             align={'center'}
             flex={1}>
-            <Icon color={'pink.400'} w={5} h={5} as={ChevronRightIcon} />
+            <Icon color={'blue.400'} w={5} h={5} as={ChevronRightIcon} />
           </Flex>
         </Stack>
       </Link>

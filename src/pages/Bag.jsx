@@ -69,7 +69,7 @@ const  Bag= () => {
       </div>
     <Link to="/address">   <Button  borderRadius={5}
                         variant="solid"
-                        colorScheme="pink"
+                        colorScheme="blue"
                         width="80px" >CheckOut</Button></Link>
     
     </article>

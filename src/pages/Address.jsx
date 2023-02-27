@@ -63,7 +63,7 @@ const Checkout = () => {
       };
       
       setFormData(AddressDetail);
-
+      setCart(0)
       toast({
         size: "700",
         position: "top-center",
@@ -96,7 +96,7 @@ const Checkout = () => {
         <Text textAlign={"start"}>Home » Checkout</Text>
       </Box>
       <Box>
-        <Heading size={"lg"}  color="#e17055">
+        <Heading size={"lg"}  color="blue">
           Checkout
         </Heading>
       </Box>

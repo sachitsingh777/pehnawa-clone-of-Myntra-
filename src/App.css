@@ -68,7 +68,7 @@ background: -webkit-linear-gradient(45deg, #ee7752, #e73c7e, #23a6d5 80%);
 
 .cart span:nth-child(2) {
   padding: 0 3px;
-  background-color: #e73c7e;
+  background-color: rgba(10, 92, 214, 0.699);
   color: white;
   font-weight: bolx;
   border-radius: 5px;
@@ -79,7 +79,7 @@ background: -webkit-linear-gradient(45deg, #ee7752, #e73c7e, #23a6d5 80%);
 
 .cart  span:nth-child(1) {
   font-size: 2rem;
-  color:#e73c7e;
+  color:rgba(10, 92, 214, 0.699);
 }
 .login-form{
   margin:100px;
